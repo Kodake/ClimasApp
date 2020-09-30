@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <img [src]="urlImage" width="300px" height="300px">
+        </div>
+        <div class="col-lg-6">
+            <input type="text" placeholder="City Name" class="form-control form-control-lg" [(ngModel)]="ciudad">
+            <button type="button" class="btn btn-primary btn-block btn-lg mt-4" 
+                    [disabled]="ciudad == ''" (click)="getClima()">Get Weather</button>
+
+            <br />
+
+            <div class="card" *ngIf="query">
+                <div class="card-body">
+                    <p><b>Temperature: </b>{{temperature | number: '1.2-2'}} °C</p>
+                    <p><b>Humidity: </b>{{humidity}} %</p>
+                    <p><b>Weather: </b>{{weather}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
